@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
+import { registerApp } from './common/observer';
 
 Vue.config.productionTip = false
 
-new Vue({
+const APP = new Vue({
   render: h => h(App),
-}).$mount('#app')
+});
+registerApp(APP);
+APP.$mount('#app')
